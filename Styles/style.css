@@ -1,0 +1,19 @@
+.fibonacci {
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(255, 255, 0);
+    background-color: blue;
+}
+
+span {
+    padding: 15px;
+    background-color: brown;
+}
+
+#start {
+background-color: rgb(122, 0, 0);
+color: aliceblue;
+font-size: 20px;
+border-radius: 10px;
+padding: 10px;
+}

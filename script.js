@@ -1,26 +1,31 @@
 'use strict'
 
-function makeFibonacciFunction (num) {
-    
-    let a = 1, b = 1;
+let numberContainer = document.querySelector('.fibonacci');
+let buttonStart = document.querySelector('#start');
 
-    for (let i = 3; i <= num; i++) {
-    let c = a + b;
-    a = b;
-    b = c;
+function makeFibonacciFunction() {
+    let a = 0;
+    let nextNumber = function() {
+        let b = 0;
+        let c = 1;
+        for (let i = 1; i <= a; i++) {
+            let x = b + c;
+            b = c;
+            c = x;
+        }
+        a += 1;
+        
+        let spanElem = document.createElement('span');
+        spanElem.innerHTML +=  c;
+        numberContainer.appendChild(spanElem);
+        
+        return ;
     }
-
-    return b;
-
+    return nextNumber;
 }
 
-console.log (makeFibonacciFunction (1));
-console.log (makeFibonacciFunction (2));
-console.log (makeFibonacciFunction (3));
-console.log (makeFibonacciFunction (4));
-console.log (makeFibonacciFunction (5));
-console.log (makeFibonacciFunction (6));
-console.log (makeFibonacciFunction (7));
-console.log (makeFibonacciFunction (8));
-console.log (makeFibonacciFunction (9));
-console.log (makeFibonacciFunction (10));
+const fibonacci = makeFibonacciFunction();
+
+buttonStart.addEventListener('click', fibonacci);
+
+
